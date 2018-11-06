@@ -30,10 +30,9 @@ namespace Printer_Form
         private void button1_Click(object sender, EventArgs e)
         {
             
+
             String A, B, C;
             String AbsoluteSave = "d:\\img";
-            
-            
                 A = textBox1.Text;
                 C = StaticClass.StringEncoder(A);
                 B = StaticClass.StringDecder(C);
