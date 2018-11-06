@@ -19,29 +19,52 @@ namespace Printer_Form
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-        }
-        int temp = 1;
-        private void button1_Click(object sender, EventArgs e)
-        {
             
-
             String A, B, C;
             String AbsoluteSave = "d:\\img";
-                A = textBox1.Text;
-                C = StaticClass.StringEncoder(A);
-                B = StaticClass.StringDecder(C);
-                QRC.CreateQRCode(AbsoluteSave, C, temp,8);
-                //Console.WriteLine(A);
-                Console.WriteLine(C);
-                Console.WriteLine(B);
-            pictureBox1.ImageLocation = "d:\\img\\1.png";
-            printDocument1.Print();
+            A = textBox1.Text;
+            C = StaticClass.StringEncoder(A);
+            B = StaticClass.StringDecder(C);
+            QRC.CreateQRCode(AbsoluteSave, C, temp, 4);
+            pictureBox1.ImageLocation = @"d:\\img\\1.png";
+           
+
+        }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+           if (e.KeyCode == Keys.Enter) { printDocument1.Print();
+                textBox1.Text = null;
+            }
+        }
+                int temp = 1;
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            //String A, B, C;
+            //String AbsoluteSave = "d:\\img";
+            //    A = textBox1.Text;
+            //    C = StaticClass.StringEncoder(A);
+            //    B = StaticClass.StringDecder(C);
+            //    QRC.CreateQRCode(AbsoluteSave, C, temp,4);
+
+            //    //Console.WriteLine(A);
+            //    //Console.WriteLine(C);
+            //    //Console.WriteLine(B);
+            
+            //pictureBox1.ImageLocation = @"d:\\img\\1.png";
+            if (pictureBox1.Image != null)
+            {
+                printDocument1.Print();
+
+            }
+            
+
 
 
         }
@@ -78,9 +101,8 @@ namespace Printer_Form
             int a = e.PageBounds.Width / 2 - (pictureBox1.Image.Width +big) / 2;
             int b = e.PageBounds.Height / 2 - (pictureBox1.Image.Height + big) / 2;
             e.Graphics.DrawImage(pictureBox1.Image, a, b, pictureBox1.Image.Width + big, pictureBox1.Image.Height + big);
-            
+           
 
-            
         }
     }
 }

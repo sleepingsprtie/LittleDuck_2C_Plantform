@@ -47,6 +47,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.AcceptsReturn = true;
+            this.textBox1.AcceptsTab = true;
             this.textBox1.Location = new System.Drawing.Point(82, 59);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 25);
@@ -74,6 +76,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
