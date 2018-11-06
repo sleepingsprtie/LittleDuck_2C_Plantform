@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.IO;
-using ThoughtWorks.QRCode.Codec;//工具——>NuGet包管理器——>程序包管理器控制台——>Install-Package ThoughtWorks.QRCode -Version 1.1.0
+using ThoughtWorks.QRCode.Codec;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
