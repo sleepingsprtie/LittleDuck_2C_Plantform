@@ -104,5 +104,24 @@ namespace Printer_Form
            
 
         }
+
+        private void 选择打印机ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 打印ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                printDocument1.Print();
+
+            }
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }
